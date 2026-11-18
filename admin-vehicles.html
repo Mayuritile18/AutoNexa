@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoNexa - Admin Vehicles</title>
+
+<link rel="stylesheet" href="admin-style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="admin-navbar">
+
+<div class="admin-logo">
+
+<img src="images/logo.jpg" alt="AutoNexa Logo">
+
+<div>
+
+<h1>Auto<span>Nexa</span></h1>
+
+<p>Administration Panel</p>
+
+</div>
+
+</div>
+
+<div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+<div class="admin-user">
+
+<div class="admin-user-info">
+
+<strong>Administrator</strong>
+
+<span>Admin Account</span>
+
+</div>
+
+<div class="admin-profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="admin-sidebar">
+
+<div class="sidebar-title">
+Admin Management
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-gauge-high"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="admin-customers.html">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+</li>
+
+<li>
+<a href="admin-vehicles.html" class="active">
+<i class="fa-solid fa-car"></i>
+Vehicles
+</a>
+</li>
+
+<li>
+<a href="admin-services.html">
+<i class="fa-solid fa-wrench"></i>
+Services
+</a>
+</li>
+
+
+<li>
+<a href="admin-staff.html">
+<i class="fa-solid fa-user-gear"></i>
+Staff
+</a>
+</li>
+
+<li>
+<a href="admin-history.html">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Service History
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-page-title">
+
+<i class="fa-solid fa-car"></i>
+
+<div>
+
+<h2>Vehicle Management</h2>
+
+<p>
+Manage registered vehicle information
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Add Vehicle</h3>
+
+<p>Register a vehicle with customer details</p>
+
+</div>
+
+</div>
+
+
+<form action="/admin-vehicles.html" method="post" class="admin-form">
+
+<div class="admin-form-group">
+
+<label>Customer Name</label>
+
+<input
+type="text"
+name="customerName"
+placeholder="Enter customer name"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Vehicle Number</label>
+
+<input
+type="text"
+name="vehicleNumber"
+placeholder="Example: MH12AB1234"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Vehicle Type</label>
+
+<select name="vehicleType" required>
+
+<option value="">Select vehicle type</option>
+
+<option>Sedan</option>
+<option>Hatchback</option>
+<option>SUV</option>
+
+
+</select>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Vehicle Brand</label>
+
+<input
+type="text"
+name="brand"
+placeholder="Example: Hyundai"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Vehicle Model</label>
+
+<input
+type="text"
+name="model"
+placeholder="Example: Creta"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Manufacturing Year</label>
+
+<input
+type="number"
+name="manufacturingYear"
+min="1900"
+max="2026"
+placeholder="Example: 2022"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Registration Date</label>
+
+<input
+type="date"
+name="registrationDate"
+required>
+
+</div>
+
+
+<div class="admin-form-actions">
+
+<button type="reset" class="reset-btn">
+Clear
+</button>
+
+<button type="submit" class="submit-btn">
+
+<i class="fa-solid fa-car"></i>
+
+Add Vehicle
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Vehicle Records</h3>
+
+<p>Registered vehicles</p>
+
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Customer</th>
+<th>Vehicle No.</th>
+<th>Type</th>
+<th>Brand</th>
+<th>Model</th>
+<th>Year</th>
+<th>Registration Date</th>
+<th>DELETE</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<footer class="admin-footer">
+
+<span>© 2026 AutoNexa. All Rights Reserved.</span>
+
+<span>Vehicle Management</span>
+
+</footer>
+
+
+</main>
+
+</div>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Service History</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+
+        <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+        <div>
+            <h1>Auto<span>Nexa</span></h1>
+            <p></p>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="customer.html">
+            <i class="fa-solid fa-users"></i>
+            Customer
+        </a>
+
+        <a href="vehicle.html">
+            <i class="fa-solid fa-car"></i>
+            Vehicle
+        </a>
+
+        <a href="service.html">
+            <i class="fa-solid fa-wrench"></i>
+            Service
+        </a>
+
+
+        <a href="history.html" class="active">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            History
+        </a>
+
+    </nav>
+
+
+    <div class="admin">
+
+        <div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+        <div class="notification">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <a href="logout.html" class="profile" title="Logout" aria-label="Logout" style="text-decoration:none; color:inherit;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <div class="page-title">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        <div>
+
+            <h2>Service History</h2>
+
+            <p>
+                View previous vehicle service and maintenance records
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUMMARY -->
+
+    <div class="history-summary">
+
+
+        <div class="history-stat">
+
+            <i class="fa-solid fa-car"></i>
+
+            <div>
+                <span>Total Vehicles</span>
+                <strong>85</strong>
+            </div>
+
+        </div>
+
+
+        <div class="history-stat">
+
+            <i class="fa-solid fa-wrench"></i>
+
+            <div>
+                <span>Total Services</span>
+                <strong>230</strong>
+            </div>
+
+        </div>
+
+
+        <div class="history-stat">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <div>
+                <span>Completed</span>
+                <strong>218</strong>
+            </div>
+
+        </div>
+
+
+        <div class="history-stat">
+
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            <div>
+                <span>Service Records</span>
+                <strong>230</strong>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- HISTORY TABLE -->
+
+    <div class="table-card">
+
+        <div class="table-top">
+
+            <div>
+
+                <h3>
+                    Vehicle Service Records
+                </h3>
+
+                <p>
+                    Previous service information
+                </p>
+
+            </div>
+
+            <a href="service.html" class="add-service-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Service
+
+            </a>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Vehicle No.</th>
+
+                        <th>Service Date</th>
+
+                        <th>Service Type</th>
+
+                        <th>KM</th>
+
+                        <th>Staff Name</th>
+
+                        <th>Cost</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>MH12AB1234</td>
+
+                        <td>10 Aug 2026</td>
+
+                        <td>General Service</td>
+
+                        <td>25,000</td>
+
+                        <td>Staff 1</td>
+
+                        <td>₹2,500</td>
+
+                        <td>
+                            <span class="status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>MH14CD5678</td>
+
+                        <td>15 Aug 2026</td>
+
+                        <td>Oil Change</td>
+
+                        <td>18,500</td>
+
+                        <td>Staff 2</td>
+
+                        <td>₹1,200</td>
+
+                        <td>
+                            <span class="status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>MH12EF9012</td>
+
+                        <td>20 Aug 2026</td>
+
+                        <td>Full Service</td>
+
+                        <td>32,000</td>
+
+                        <td>Staff 3</td>
+
+                        <td>₹4,500</td>
+
+                        <td>
+                            <span class="status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>MH12GH3456</td>
+
+                        <td>25 Aug 2026</td>
+
+                        <td>Repair</td>
+
+                        <td>21,300</td>
+
+                        <td>Staff 1</td>
+
+                        <td>₹3,200</td>
+
+                        <td>
+                            <span class="status pending">
+                                Pending
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY INFORMATION -->
+
+    <div class="info-section">
+
+        <div class="info-heading">
+
+            <h3>
+                <i class="fa-solid fa-chart-line"></i>
+                Why Service History Matters
+            </h3>
+
+            <p>
+                Maintaining accurate records helps monitor vehicle maintenance over time.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card blue-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <h4>Complete Records</h4>
+
+                <p>
+                    Keep previous service dates, service types,
+                    costs and staff information organized.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card green-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h4>Track Maintenance</h4>
+
+                <p>
+                    Review previous maintenance work to understand
+                    the vehicle's service pattern.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card purple-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <h4>Better Vehicle Care</h4>
+
+                <p>
+                    Proper service records support timely maintenance
+                    and better long-term vehicle care.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                <i class="fa-solid fa-car-side"></i>
+                Auto<span>Nexa</span>
+            </h3>
+
+            <p>
+                Vehicle Automation Management System
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p>
+                © 2026 AutoNexa. All Rights Reserved.
+            </p>
+
+            <p>
+                Smart Management. Smooth Rides.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Service</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+
+        <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+        <div>
+            <h1>Auto<span>Nexa</span></h1>
+            <p></p>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="customer.html">
+            <i class="fa-solid fa-users"></i>
+            Customer
+        </a>
+
+        <a href="vehicle.html">
+            <i class="fa-solid fa-car"></i>
+            Vehicle
+        </a>
+
+        <a href="service.html" class="active">
+            <i class="fa-solid fa-wrench"></i>
+            Service
+        </a>
+
+
+        <a href="history.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            History
+        </a>
+
+    </nav>
+
+
+    <div class="admin">
+
+        <div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+        <div class="notification">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <a href="logout.html" class="profile" title="Logout" aria-label="Logout" style="text-decoration:none; color:inherit;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <div class="page-title">
+
+        <i class="fa-solid fa-wrench"></i>
+
+        <div>
+
+            <h2>Service Details</h2>
+
+            <p>
+                Record vehicle service and maintenance information
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SERVICE FORM -->
+
+    <div class="form-card">
+
+        <form action="/services" method="post">
+
+            <div class="form-group">
+
+                <label for="vehicleNumber">
+                    Vehicle Number
+                </label>
+
+                <input
+                    type="text"
+                    id="vehicleNumber"
+                    name="vehicleNumber"
+                    placeholder="Enter vehicle number"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="serviceDate">
+                    Service Date
+                </label>
+
+                <input
+                    type="date"
+                    id="serviceDate"
+                    name="serviceDate"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="serviceType">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    Service Type
+</label>
+
+<select
+    id="serviceType"
+    name="serviceType"
+    required
+>
+    <option value="" disabled selected>
+        Select Service Type
+    </option>
+
+    <option value="General Service">
+        General Service
+    </option>
+
+    <option value="Engine Oil Change">
+        Engine Oil Change
+    </option>
+
+    <option value="Brake Service">
+        Brake Service
+    </option>
+
+    <option value="AC Service">
+        AC Service
+    </option>
+
+    <option value="Wheel Alignment & Balancing">
+        Wheel Alignment & Balancing
+    </option>
+
+    <option value="Battery Replacement">
+        Battery Replacement
+    </option>
+
+    <option value="Full Car Service">
+        Full Car Service
+    </option>
+
+    <option value="Clutch Service">
+        Clutch Service
+    </option>
+
+    <option value="Suspension Service">
+        Suspension Service
+    </option>
+
+    <option value="Denting & Painting">
+        Denting & Painting
+    </option>
+</select>
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="odometer">
+                    Odometer Reading (KM)
+                </label>
+
+                <input
+                    type="number"
+                    id="odometer"
+                    name="odometer"
+                    placeholder="Enter current KM"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="staffName">
+                    Staff Name
+                </label>
+
+                <input
+    type="text"
+    id="staffName"
+    name="staffName"
+    value="{{ session.get('name', '') }}"
+    readonly
+    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="workDone">
+                    Work Done
+                </label>
+
+                <textarea
+                    id="workDone"
+                    name="workDone"
+                    placeholder="Example: Engine oil change, brake inspection, filter replacement"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="workCost">
+    <i class="fa-solid fa-indian-rupee-sign"></i>
+    Service Cost
+</label>
+
+<input
+    type="number"
+    id="workCost"
+    name="workCost"
+    placeholder="Service cost"
+    readonly
+>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="paymentMethod">
+                    Payment Method
+                </label>
+
+                <select
+                    id="paymentMethod"
+                    name="paymentMethod"
+                    required>
+
+                    <option value="">Select payment method</option>
+                    <option value="Cash">Cash</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Card">Card</option>
+                    <option value="Net Banking">Net Banking</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="paymentStatus">
+                    Payment Status
+                </label>
+
+                <select
+                    id="paymentStatus"
+                    name="paymentStatus"
+                    required>
+
+                    <option value="">Select payment status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="serviceStatus">
+                    Service Status
+                </label>
+
+                <select
+                    id="serviceStatus"
+                    name="serviceStatus"
+                    required>
+
+                    <option value="">Select service status</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="description">
+                    Service Description
+                </label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    placeholder="Enter additional service details"></textarea>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button type="reset" class="reset-btn">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Clear
+                </button>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Submit
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- SERVICE TYPES -->
+
+    <div class="info-section">
+
+        <div class="info-heading">
+
+            <h3>
+                <i class="fa-solid fa-gears"></i>
+                Available Service Types
+            </h3>
+
+            <p>
+                Common maintenance services handled through AutoNexa.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card blue-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+
+                <h4>General Service</h4>
+
+                <p>
+                    Routine inspection and maintenance to keep
+                    the vehicle in good working condition.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card green-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-oil-can"></i>
+                </div>
+
+                <h4>Oil Change</h4>
+
+                <p>
+                    Engine oil replacement helps maintain smooth
+                    engine operation and performance.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card orange-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+
+                <h4>Repair & Inspection</h4>
+
+                <p>
+                    Identify vehicle issues and record repair or
+                    maintenance work performed by staff.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                <i class="fa-solid fa-car-side"></i>
+                Auto<span>Nexa</span>
+            </h3>
+
+            <p>
+                Vehicle Automation Management System
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p>
+                © 2026 AutoNexa. All Rights Reserved.
+            </p>
+
+            <p>
+                Smart Management. Smooth Rides.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+const serviceCosts = {
+    "General Service": 1500,
+    "Engine Oil Change": 2500,
+    "Brake Service": 3500,
+    "AC Service": 2000,
+    "Wheel Alignment & Balancing": 1200,
+    "Battery Replacement": 5000,
+    "Full Car Service": 5500,
+    "Clutch Service": 8000,
+    "Suspension Service": 7000,
+    "Denting & Painting": 10000
+};
+
+const serviceType = document.getElementById("serviceType");
+const workCost = document.getElementById("workCost");
+
+if (serviceType && workCost) {
+    serviceType.addEventListener("change", function () {
+        workCost.value = serviceCosts[this.value] || "";
+    });
+}
+</script>
+
+<script>
+const serviceDate = document.getElementById("serviceDate");
+
+if (serviceDate) {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    serviceDate.value = `${year}-${month}-${day}`;
+}
+</script>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

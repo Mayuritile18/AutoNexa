@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoNexa - Admin Staff</title>
+
+<link rel="stylesheet" href="admin-style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="admin-navbar">
+
+<div class="admin-logo">
+
+<img src="images/logo.jpg" alt="AutoNexa Logo">
+
+<div>
+
+<h1>Auto<span>Nexa</span></h1>
+
+<p>Administration Panel</p>
+
+</div>
+
+</div>
+
+<div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+<div class="admin-user">
+
+<div class="admin-user-info">
+
+<strong>Administrator</strong>
+
+<span>Admin Account</span>
+
+</div>
+
+<div class="admin-profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="admin-sidebar">
+
+<div class="sidebar-title">
+Admin Management
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-gauge-high"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="admin-customers.html">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+</li>
+
+<li>
+<a href="admin-vehicles.html">
+<i class="fa-solid fa-car"></i>
+Vehicles
+</a>
+</li>
+
+<li>
+<a href="admin-services.html">
+<i class="fa-solid fa-wrench"></i>
+Services
+</a>
+</li>
+
+
+<li>
+<a href="admin-staff.html" class="active">
+<i class="fa-solid fa-user-gear"></i>
+Staff
+</a>
+</li>
+
+<li>
+<a href="admin-history.html">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Service History
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-page-title">
+
+<i class="fa-solid fa-user-gear"></i>
+
+<div>
+
+<h2>Staff Management</h2>
+
+<p>
+Manage vehicle service staff
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Add Staff Member</h3>
+
+<p>Enter staff information</p>
+
+</div>
+
+</div>
+
+
+<form action="#" method="post" class="admin-form">
+
+
+<div class="admin-form-group">
+
+<label>Staff Name</label>
+
+<input
+type="text"
+name="staffName"
+placeholder="Enter staff name"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+name="phone"
+maxlength="10"
+pattern="[0-9]{10}"
+placeholder="Enter phone number"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+name="email"
+placeholder="Enter email"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Role</label>
+
+<select name="role" required>
+
+<option value="">Select role</option>
+
+<option>Service Advisor</option>
+<option>Mechanic</option>
+<option>Technician</option>
+<option>Service Manager</option>
+
+</select>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Experience</label>
+
+<input
+type="text"
+name="experience"
+placeholder="Example: 5 years"
+required>
+
+</div>
+
+
+<div class="admin-form-group">
+
+<label>Status</label>
+
+<select name="status" required>
+
+<option>Active</option>
+<option>Inactive</option>
+
+</select>
+
+</div>
+
+
+<div class="admin-form-actions">
+
+<button type="reset" class="reset-btn">
+Clear
+</button>
+
+<button type="submit" class="submit-btn">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Add Staff
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Staff Records</h3>
+
+<p>Registered service staff</p>
+
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Role</th>
+<th>Experience</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>ST001</td>
+<td>Staff 1</td>
+<td>9876543210</td>
+<td>staff1@autonexa.com</td>
+<td>Mechanic</td>
+<td>5 Years</td>
+
+<td>
+<span class="status status-active">
+Active
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn edit-btn">
+<i class="fa-solid fa-pen"></i>
+</a>
+
+<a href="#" class="action-btn delete-btn">
+<i class="fa-solid fa-trash"></i>
+</a>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>ST002</td>
+<td>Staff 2</td>
+<td>9876501234</td>
+<td>staff2@autonexa.com</td>
+<td>Technician</td>
+<td>3 Years</td>
+
+<td>
+<span class="status status-active">
+Active
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn edit-btn">
+<i class="fa-solid fa-pen"></i>
+</a>
+
+<a href="#" class="action-btn delete-btn">
+<i class="fa-solid fa-trash"></i>
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<footer class="admin-footer">
+
+<span>© 2026 AutoNexa. All Rights Reserved.</span>
+
+<span>Staff Management</span>
+
+</footer>
+
+
+</main>
+
+</div>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

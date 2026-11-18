@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin-style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="admin-navbar">
+
+    <div class="admin-logo">
+
+        <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+        <div>
+
+            <h1>Auto<span>Nexa</span></h1>
+
+            <p>Administration Panel</p>
+
+        </div>
+
+    </div>
+
+    <div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+    <div class="admin-user">
+
+        <div class="admin-user-info">
+
+            <strong>Administrator</strong>
+
+            <span>Admin Account</span>
+
+        </div>
+
+        <a href="logout.html"
+           class="admin-profile"
+           title="Logout"
+           aria-label="Logout"
+           style="text-decoration:none; color:inherit;">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="admin-sidebar">
+
+        <div class="sidebar-title">
+            Admin Management
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="admin-dashboard.html" class="active">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    Dashboard
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-customers.html">
+                    <i class="fa-solid fa-users"></i>
+                    Customers
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-vehicles.html">
+                    <i class="fa-solid fa-car"></i>
+                    Vehicles
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-services.html">
+                    <i class="fa-solid fa-wrench"></i>
+                    Services
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-staff.html">
+                    <i class="fa-solid fa-user-gear"></i>
+                    Staff
+                </a>
+            </li>
+
+
+            <li>
+                <a href="admin-history.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Service History
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="admin-main">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="admin-page-title">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <div>
+
+                <h2>Admin Dashboard</h2>
+
+                <p>
+                    Manage AutoNexa vehicle automation operations
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <div class="admin-stats">
+
+
+            <!-- TOTAL CUSTOMERS -->
+
+            <div class="admin-stat-card"
+     onclick="window.location.href='/admin-records/customers'">
+
+                <div class="stat-icon blue-stat">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Customers</span>
+
+                    <strong>
+                        {{ stats.customers }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL VEHICLES -->
+
+            <div class="admin-stat-card"
+     onclick="window.location.href='/admin-records/vehicles'">
+
+                <div class="stat-icon green-stat">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Vehicles</span>
+
+                    <strong>
+                        {{ stats.vehicles }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL SERVICES -->
+
+            <div class="admin-stat-card"
+     onclick="window.location.href='/admin-records/services'">
+
+                <div class="stat-icon orange-stat">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+
+                <div>
+
+                    <span>Total Services</span>
+
+                    <strong>
+                        {{ stats.services }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SERVICE HISTORY -->
+
+           <div class="admin-stat-card"
+     onclick="window.location.href='/admin-records/history'">
+
+                <div class="stat-icon purple-stat">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+
+                <div>
+
+                    <span>Service History</span>
+
+                    <strong>
+                        {{ stats.services }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- ================= QUICK MANAGEMENT ================= -->
+
+        <div class="admin-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h3>Management Operations</h3>
+
+                    <p>
+                        Admin can manage all major AutoNexa records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+
+                <!-- CUSTOMER MANAGEMENT -->
+
+                <a href="admin-customers.html"
+                   class="quick-card">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h4>Customer Management</h4>
+
+                    <p>
+                        Add, update, view and manage customer records.
+                    </p>
+
+                </a>
+
+
+
+                <!-- VEHICLE MANAGEMENT -->
+
+                <a href="admin-vehicles.html"
+                   class="quick-card">
+
+                    <i class="fa-solid fa-car"></i>
+
+                    <h4>Vehicle Management</h4>
+
+                    <p>
+                        Maintain registered vehicle information.
+                    </p>
+
+                </a>
+
+
+
+                <!-- SERVICE MANAGEMENT -->
+
+                <a href="admin-services.html"
+                   class="quick-card">
+
+                    <i class="fa-solid fa-wrench"></i>
+
+                    <h4>Service Management</h4>
+
+                    <p>
+                        Manage vehicle service assignments and records.
+                    </p>
+
+                </a>
+
+
+
+                <!-- STAFF MANAGEMENT -->
+
+                <a href="admin-staff.html"
+                   class="quick-card">
+
+                    <i class="fa-solid fa-user-gear"></i>
+
+                    <h4>Staff Management</h4>
+
+                    <p>
+                        Manage service staff and their roles.
+                    </p>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= ADMIN RESPONSIBILITIES ================= -->
+
+        <div class="admin-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h3>Administrator Responsibilities</h3>
+
+                    <p>
+                        Main activities performed by the system administrator
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-grid">
+
+
+                <!-- RECORD MANAGEMENT -->
+
+                <div class="quick-card">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <h4>Record Management</h4>
+
+                    <p>
+                        Maintain accurate customer, vehicle and service records.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICE MANAGEMENT -->
+
+                <div class="quick-card">
+
+                    <i class="fa-solid fa-wrench"></i>
+
+                    <h4>Service Management</h4>
+
+                    <p>
+                        Manage vehicle service records, work details and payments.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICE MONITORING -->
+
+                <div class="quick-card">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <h4>Service Monitoring</h4>
+
+                    <p>
+                        Monitor completed and pending vehicle services.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="admin-footer">
+
+            <span>
+                © 2026 AutoNexa. All Rights Reserved.
+            </span>
+
+            <span>
+                Smart Management. Smooth Rides.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+<script>
+function showDashboardRecords(sectionId) {
+
+    // सर्व record sections hide करा
+    document.querySelectorAll('.dashboard-record-section').forEach(function(section) {
+        section.style.display = 'none';
+    });
+
+    // फक्त clicked card चा section दाखवा
+    const selectedSection = document.getElementById(sectionId);
+
+    if (selectedSection) {
+        selectedSection.style.display = 'block';
+
+        selectedSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+</script>
+
+</body>
+</html>

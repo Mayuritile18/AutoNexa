@@ -1,0 +1,48 @@
+AutoNexa - Final Frontend Requirement Changes
+
+Design/CSS: Existing style.css and admin-style.css are preserved. No redesign.
+JavaScript: Not added.
+
+Final concept:
+- Admin: one administrator manages users/staff and all records.
+- Users: multiple garage staff/operators enter and update operational data.
+- Customer -> Vehicles -> Services.
+- Services record staff, work done, cost, payment method/status and service status.
+- Next service and reminders are linked to vehicle.
+- Service history is shown from service records; no separate service_history table is required.
+
+Final database tables planned for backend:
+1 users
+2 staff
+3 customers
+4 vehicles
+5 services
+6 service_work
+7 next_services
+8 reminders
+9 payments
+
+Frontend files updated:
+- login.html
+- register.html
+- vehicle.html
+- service.html
+- next-service.html
+- reminder.html
+- history.html
+- admin-customers.html (frontend action placeholder)
+- admin-vehicles.html
+- admin-services.html
+- admin-next-service.html (frontend action placeholder)
+- admin-reminders.html
+- admin-staff.html
+- admin-history.html
+
+Forms currently use frontend/static behavior or # placeholders because backend/PostgreSQL is not connected yet.
+
+
+LOGOUT UPDATE
+- Added logout.html using the existing admin-style/login design.
+- User and Admin profile icons now link to logout.html.
+- No CSS or JavaScript was added/changed.
+- This is a frontend/static logout page; real session logout will be handled by the backend later.

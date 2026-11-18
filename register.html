@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Register</title>
+
+    <link rel="stylesheet" href="admin-style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body class="login-body">
+
+
+<div class="login-container">
+
+
+    <div class="login-card">
+
+
+        <!-- LOGO -->
+        <div class="login-logo">
+
+            <img src="images/logo.jpg"
+                 alt="AutoNexa Logo">
+
+            <h1>Auto<span>Nexa</span></h1>
+
+            <p>
+                Vehicle Automation Management System
+            </p>
+
+        </div>
+
+
+        <!-- REGISTER HEADING -->
+        <div class="login-heading">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            <div>
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Register as a new AutoNexa user
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- REGISTER FORM -->
+        <form action="/register" method="post">
+
+            <!-- FULL NAME -->
+            <div class="admin-form-group">
+
+                <label for="registerName">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Full Name
+
+                </label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    name="fullName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="admin-form-group">
+
+                <label for="registerEmail">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Email Address
+
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    name="email"
+                    placeholder="Enter email address"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="admin-form-group">
+
+                <label for="registerPhone">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    Phone Number
+
+                </label>
+
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    name="phone"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    placeholder="Enter 10 digit phone number"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DESIGNATION -->
+            <div class="admin-form-group">
+
+                <label for="designation">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                    Staff Designation
+
+                </label>
+
+                <select id="designation" name="designation" required>
+
+                    <option value="">Select designation</option>
+                    <option value="Service Advisor">Service Advisor</option>
+                    <option value="Mechanic">Mechanic</option>
+                    <option value="Technician">Technician</option>
+                    <option value="Receptionist">Receptionist</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="admin-form-group">
+
+                <label for="registerPassword">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Password
+
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    name="password"
+                    <!-- placeholder="Create password" -->
+                    required
+                >
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+            <div class="admin-form-group">
+
+                <label for="confirmPassword">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Confirm Password
+
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                <!-- placeholder="Confirm your password" --> -->
+                    required
+                >
+
+            </div>
+
+
+            <!-- CREATE ACCOUNT -->
+            <button
+                type="submit"
+                class="register-btn"
+            >
+
+                <i class="fa-solid fa-user-check"></i>
+
+                Create Account
+
+            </button>
+
+
+        </form>
+
+
+        <!-- BACK TO LOGIN -->
+        <div class="register-box">
+
+            <p>Already have an account?</p>
+
+            <a href="login.html">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

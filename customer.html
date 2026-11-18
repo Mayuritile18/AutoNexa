@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Customer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+
+        <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+        <div>
+            <h1>Auto<span>Nexa</span></h1>
+            <p></p>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="customer.html" class="active">
+            <i class="fa-solid fa-users"></i>
+            Customer
+        </a>
+
+        <a href="vehicle.html">
+            <i class="fa-solid fa-car"></i>
+            Vehicle
+        </a>
+
+        <a href="service.html">
+            <i class="fa-solid fa-wrench"></i>
+            Service
+        </a>
+
+
+        <a href="history.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            History
+        </a>
+
+    </nav>
+
+
+    <div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+        <div class="notification">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <a href="logout.html" class="profile" title="Logout" aria-label="Logout" style="text-decoration:none; color:inherit;">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <div class="page-title">
+
+        <i class="fa-solid fa-users"></i>
+
+        <div>
+
+            <h2>Customer Details</h2>
+
+            <p>
+                Add and manage customer information
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CUSTOMER FORM -->
+
+    <div class="form-card">
+
+        <form action="/customers" method="post">
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Customer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="customerName"
+                    placeholder="Enter customer name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Enter 10 digit phone number"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="address">
+                    Address
+                </label>
+
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter customer address"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button type="reset" class="reset-btn">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Clear
+                </button>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Submit
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- CUSTOMER INFORMATION -->
+
+    <div class="info-section">
+
+        <div class="info-heading">
+
+            <h3>
+                <i class="fa-solid fa-circle-info"></i>
+                Customer Management
+            </h3>
+
+            <p>
+                Keep customer information organized for better vehicle service management.
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-card blue-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-address-card"></i>
+                </div>
+
+                <h4>Customer Profile</h4>
+
+                <p>
+                    Maintain customer name, contact details and address
+                    for easy communication.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card green-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h4>Easy Communication</h4>
+
+                <p>
+                    Accurate contact information helps the service team
+                    communicate important updates.
+                </p>
+
+            </div>
+
+
+
+            <div class="info-card purple-info">
+
+                <div class="info-card-icon">
+                    <i class="fa-solid fa-car"></i>
+                </div>
+
+                <h4>Vehicle Connection</h4>
+
+                <p>
+                    Customer information can be associated with their
+                    registered vehicles and service records.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                <i class="fa-solid fa-car-side"></i>
+                Auto<span>Nexa</span>
+            </h3>
+
+            <p>
+                Vehicle Automation Management System
+            </p>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p>
+                © 2026 AutoNexa. All Rights Reserved.
+            </p>
+
+            <p>
+                Smart Management. Smooth Rides.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

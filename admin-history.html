@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoNexa - Admin History</title>
+
+<link rel="stylesheet" href="admin-style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="admin-navbar">
+
+<div class="admin-logo">
+
+<img src="images/logo.jpg" alt="AutoNexa Logo">
+
+<div>
+
+<h1>Auto<span>Nexa</span></h1>
+
+<p>Administration Panel</p>
+
+</div>
+
+</div>
+
+<div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+<div class="admin-user">
+
+<div class="admin-user-info">
+
+<strong>Administrator</strong>
+
+<span>Admin Account</span>
+
+</div>
+
+<div class="admin-profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="admin-sidebar">
+
+<div class="sidebar-title">
+Admin Management
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-gauge-high"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="admin-customers.html">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+</li>
+
+<li>
+<a href="admin-vehicles.html">
+<i class="fa-solid fa-car"></i>
+Vehicles
+</a>
+</li>
+
+<li>
+<a href="admin-services.html">
+<i class="fa-solid fa-wrench"></i>
+Services
+</a>
+</li>
+
+
+<li>
+<a href="admin-staff.html">
+<i class="fa-solid fa-user-gear"></i>
+Staff
+</a>
+</li>
+
+<li>
+<a href="admin-history.html" class="active">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Service History
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-page-title">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+<div>
+
+<h2>Service History</h2>
+
+<p>
+View and manage previous vehicle service records
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="admin-stats">
+
+
+<div class="admin-stat-card">
+
+<div class="stat-icon blue-stat">
+
+<i class="fa-solid fa-car"></i>
+
+</div>
+
+<div>
+
+<span>Total Vehicles</span>
+
+<strong>85</strong>
+
+</div>
+
+</div>
+
+
+<div class="admin-stat-card">
+
+<div class="stat-icon orange-stat">
+
+<i class="fa-solid fa-wrench"></i>
+
+</div>
+
+<div>
+
+<span>Total Services</span>
+
+<strong>230</strong>
+
+</div>
+
+</div>
+
+
+<div class="admin-stat-card">
+
+<div class="stat-icon green-stat">
+
+<i class="fa-solid fa-circle-check"></i>
+
+</div>
+
+<div>
+
+<span>Completed</span>
+
+<strong>218</strong>
+
+</div>
+
+</div>
+
+
+<div class="admin-stat-card">
+
+<div class="stat-icon purple-stat">
+
+<i class="fa-solid fa-indian-rupee-sign"></i>
+
+</div>
+
+<div>
+
+<span>Total Records</span>
+
+<strong>230</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Vehicle Service Records</h3>
+
+<p>Previous maintenance information</p>
+
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Vehicle</th>
+<th>Date</th>
+<th>Service Type</th>
+<th>KM</th>
+<th>Staff</th>
+<th>Work Done</th>
+<th>Cost</th>
+<th>Payment</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>H001</td>
+<td>MH12AB1234</td>
+<td>10 Aug 2026</td>
+<td>General Service</td>
+<td>25,000</td>
+<td>Staff 1</td>
+<td>Oil Change, Brake Check</td>
+<td>₹2,500</td>
+<td>UPI</td>
+
+<td>
+<span class="status status-completed">
+Completed
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn view-btn">
+<i class="fa-solid fa-eye"></i>
+</a>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>H002</td>
+<td>MH14CD5678</td>
+<td>15 Aug 2026</td>
+<td>Oil Change</td>
+<td>18,500</td>
+<td>Staff 2</td>
+<td>Oil Filter Replacement</td>
+<td>₹1,200</td>
+<td>Cash</td>
+
+<td>
+<span class="status status-completed">
+Completed
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn view-btn">
+<i class="fa-solid fa-eye"></i>
+</a>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>H003</td>
+<td>MH12EF9012</td>
+<td>20 Aug 2026</td>
+<td>Full Service</td>
+<td>32,000</td>
+<td>Staff 3</td>
+<td>Full Inspection, Engine Service</td>
+<td>₹4,500</td>
+<td>Card</td>
+
+<td>
+<span class="status status-completed">
+Completed
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn view-btn">
+<i class="fa-solid fa-eye"></i>
+</a>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>H004</td>
+<td>MH12GH3456</td>
+<td>25 Aug 2026</td>
+<td>Repair</td>
+<td>21,300</td>
+<td>Staff 1</td>
+<td>Brake Repair, Wheel Alignment</td>
+<td>₹3,200</td>
+<td>Pending</td>
+
+<td>
+<span class="status status-pending">
+Pending
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn view-btn">
+<i class="fa-solid fa-eye"></i>
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<footer class="admin-footer">
+
+<span>© 2026 AutoNexa. All Rights Reserved.</span>
+
+<span>Service History</span>
+
+</footer>
+
+
+</main>
+
+</div>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Login</title>
+
+    <link rel="stylesheet" href="admin-style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <!-- LOGO -->
+        <div class="login-logo">
+
+            <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+            <h1>Auto<span>Nexa</span></h1>
+
+            <p>Vehicle Automation Management System</p>
+
+        </div>
+
+
+        <!-- LOGIN HEADING -->
+        <div class="login-heading">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            <div>
+
+                <h2>Welcome Back</h2>
+
+                <p>Login to access AutoNexa</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+        <form action="/login" method="post">
+            <!-- EMAIL -->
+            <div class="admin-form-group">
+
+                <label for="email">
+                   <i class="fa-solid fa-user"></i>
+                   Staff Name
+                </label>
+
+                <input
+                   type="text"
+                   id="email"
+                   name="email"
+                   placeholder="Enter your name"
+                   required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="admin-form-group">
+
+                <label for="password">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    Password
+
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ROLE -->
+            <div class="admin-form-group">
+
+                <label for="role">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    Login As
+
+                </label>
+
+                <select id="role" name="role" required>
+
+                    <option value="">Select account type</option>
+
+                    <option value="user">
+                        User
+                    </option>
+
+                    <option value="admin">
+                        Administrator
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- USER LOGIN -->
+            <button
+                type="submit"
+                class="login-btn"
+               
+            >
+
+                <i class="fa-solid fa-user"></i>
+
+                Login as User
+
+            </button>
+
+
+            <!-- ADMIN LOGIN -->
+            <button
+                type="submit"
+                class="login-btn admin-login-btn"
+                
+            >
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                Login as Administrator
+
+            </button>
+
+        </form>
+
+
+        <!-- REGISTER -->
+        <div class="register-box">
+
+            <p>New user?</p>
+
+            <a href="register.html">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Register Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

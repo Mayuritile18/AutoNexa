@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoNexa - Admin Services</title>
+
+<link rel="stylesheet" href="admin-style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<header class="admin-navbar">
+
+<div class="admin-logo">
+
+<img src="images/logo.jpg" alt="AutoNexa Logo">
+
+<div>
+
+<h1>Auto<span>Nexa</span></h1>
+
+<p>Administration Panel</p>
+
+</div>
+
+</div>
+
+<div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+<div class="admin-user">
+
+<div class="admin-user-info">
+
+<strong>Administrator</strong>
+
+<span>Admin Account</span>
+
+</div>
+
+<div class="admin-profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="admin-layout">
+
+
+<aside class="admin-sidebar">
+
+<div class="sidebar-title">
+Admin Management
+</div>
+
+<ul class="sidebar-menu">
+
+<li>
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-gauge-high"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="admin-customers.html">
+<i class="fa-solid fa-users"></i>
+Customers
+</a>
+</li>
+
+<li>
+<a href="admin-vehicles.html">
+<i class="fa-solid fa-car"></i>
+Vehicles
+</a>
+</li>
+
+<li>
+<a href="admin-services.html" class="active">
+<i class="fa-solid fa-wrench"></i>
+Services
+</a>
+</li>
+
+
+<li>
+<a href="admin-staff.html">
+<i class="fa-solid fa-user-gear"></i>
+Staff
+</a>
+</li>
+
+<li>
+<a href="admin-history.html">
+<i class="fa-solid fa-clock-rotate-left"></i>
+Service History
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+
+
+<main class="admin-main">
+
+
+<div class="admin-page-title">
+
+<i class="fa-solid fa-wrench"></i>
+
+<div>
+
+<h2>Service Management</h2>
+
+<p>
+Manage vehicle service records and staff assignments
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Add Service Record</h3>
+
+<p>Enter completed vehicle service details</p>
+
+</div>
+
+</div>
+
+
+<form action="/admin-services.html" method="post" class="admin-form">
+
+<div class="admin-form-group">
+<label>Vehicle Number</label>
+<input type="text" name="vehicleNumber" placeholder="Enter vehicle number" required>
+</div>
+
+<div class="admin-form-group">
+    <label>Service Date</label>
+
+    <input
+        type="date"
+        id="adminServiceDate"
+        name="serviceDate"
+        required>
+</div>
+
+<div class="admin-form-group">
+    <label>Service Type</label>
+
+    <select name="serviceType" required>
+        <option value="">Select service type</option>
+
+        <option>General Service</option>
+        <option>Engine Oil Change</option>
+        <option>Brake Service</option>
+        <option>AC Service</option>
+        <option>Wheel Alignment & Balancing</option>
+        <option>Battery Replacement</option>
+        <option>Full Car Service</option>
+        <option>Clutch Service</option>
+        <option>Suspension Service</option>
+        <option>Denting & Painting</option>
+    </select>
+</div>
+
+<div class="admin-form-group">
+    <label>Staff Name</label>
+    <!-- <select name="staffName" required>
+        <option value="{{ session.get('name', '') }}">
+            {{ session.get('name', 'Select staff') }}
+        </option>
+    </select> -->
+    <select name="staffName" required>
+        <option value="">Select staff</option>
+
+        <option value="snehal">snehal</option>
+        <option value="Nilesh">Nilesh</option>
+
+    </select> 
+</div>
+
+<div class="admin-form-group">
+<label>Service KM</label>
+<input type="number" name="serviceKm" min="0" placeholder="Enter kilometers" required>
+</div>
+
+<div class="admin-form-group">
+<label>Work Done</label>
+<textarea name="workDone" placeholder="Enter work performed" required></textarea>
+</div>
+
+<div class="admin-form-group">
+    <label>Work / Service Cost</label>
+
+    <input
+        type="number"
+        id="adminWorkCost"
+        name="cost"
+        min="0"
+        placeholder="Service cost"
+        readonly
+        required
+    >
+</div>
+
+<div class="admin-form-group">
+<label>Payment Method</label>
+<select name="paymentMethod" required>
+<option value="">Select payment method</option><option>Cash</option><option>UPI</option><option>Card</option><option>Net Banking</option>
+</select>
+</div>
+
+<div class="admin-form-group">
+<label>Payment Status</label>
+<select name="paymentStatus" required>
+<option value="">Select payment status</option><option>Paid</option><option>Pending</option>
+</select>
+</div>
+
+<div class="admin-form-group">
+<label>Service Status</label>
+<select name="status" required>
+<option value="">Select service status</option><option>In Progress</option><option>Completed</option><option>Pending</option>
+</select>
+</div>
+
+<div class="admin-form-actions">
+<button type="reset" class="reset-btn">Clear</button>
+<button type="submit" class="submit-btn"><i class="fa-solid fa-plus"></i> Add Service</button>
+</div>
+
+</form>
+
+</div>
+
+
+
+<div class="admin-panel">
+
+<div class="panel-header">
+
+<div>
+
+<h3>Service Records</h3>
+
+<p>Vehicle maintenance service records</p>
+
+</div>
+
+</div>
+
+
+<div class="table-wrapper">
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+    <th>ID</th>
+    <th>VEHICLE</th>
+    <th>CUSTOMER NAME</th>
+    <th>DATE</th>
+    <th>TYPE</th>
+    <th>STAFF</th>
+    <th>KM</th>
+    <th>WORK DONE</th>
+    <th>COST</th>
+    <th>PAYMENT</th>
+    <th>STATUS</th>
+    <th>ACTION</th>
+    <th>DELETE</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td>S001</td>
+<td>MH12AB1234</td>
+<td>10 Aug 2026</td>
+<td>General Service</td>
+<td>Staff 1</td>
+<td>25,000</td>
+<td>Oil Change, Brake Check</td>
+<td>₹2,500</td>
+<td>UPI</td>
+
+<td>
+<span class="status status-completed">
+Completed
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn edit-btn">
+<i class="fa-solid fa-pen"></i>
+</a>
+
+<a href="#" class="action-btn delete-btn">
+<i class="fa-solid fa-trash"></i>
+</a>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td>S002</td>
+<td>MH14CD5678</td>
+<td>15 Aug 2026</td>
+<td>Oil Change</td>
+<td>Staff 2</td>
+<td>18,500</td>
+<td>Oil Filter Replacement</td>
+<td>₹1,200</td>
+<td>Cash</td>
+
+<td>
+<span class="status status-completed">
+Completed
+</span>
+</td>
+
+<td>
+
+<a href="#" class="action-btn edit-btn">
+<i class="fa-solid fa-pen"></i>
+</a>
+
+<a href="#" class="action-btn delete-btn">
+<i class="fa-solid fa-trash"></i>
+</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+
+<footer class="admin-footer">
+
+<span>© 2026 AutoNexa. All Rights Reserved.</span>
+
+<span>Service Management</span>
+
+</footer>
+
+
+</main>
+
+</div>
+
+<script>
+const adminServiceCosts = {
+    "General Service": 1500,
+    "Engine Oil Change": 2500,
+    "Brake Service": 3500,
+    "AC Service": 2000,
+    "Wheel Alignment & Balancing": 1200,
+    "Battery Replacement": 5000,
+    "Full Car Service": 5500,
+    "Clutch Service": 8000,
+    "Suspension Service": 7000,
+    "Denting & Painting": 10000
+};
+
+const adminServiceType = document.querySelector('[name="serviceType"]');
+const adminWorkCost = document.getElementById("adminWorkCost");
+
+if (adminServiceType && adminWorkCost) {
+    adminServiceType.addEventListener("change", function () {
+        adminWorkCost.value =
+            adminServiceCosts[this.value] || "";
+    });
+}
+</script>
+
+<script>
+const adminServiceDate = document.getElementById("adminServiceDate");
+
+if (adminServiceDate) {
+    const today = new Date();
+
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    adminServiceDate.value = `${year}-${month}-${day}`;
+}
+</script>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>

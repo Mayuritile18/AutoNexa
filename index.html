@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoNexa - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="navbar-logo">
+
+        <img src="images/logo.jpg" alt="AutoNexa Logo">
+
+        <div>
+            <h1>Auto<span>Nexa</span></h1>
+            <p></p>
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html" class="active">
+            <i class="fa-solid fa-house"></i>
+            Dashboard
+        </a>
+
+        <a href="customer.html">
+            <i class="fa-solid fa-users"></i>
+            Customer
+        </a>
+
+        <a href="vehicle.html">
+            <i class="fa-solid fa-car"></i>
+            Vehicle
+        </a>
+
+        <a href="service.html">
+            <i class="fa-solid fa-wrench"></i>
+            Service
+        </a>
+
+        <a href="history.html">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            History
+        </a>
+
+    </nav>
+
+
+    <div class="admin">
+
+        <div class="date">
+    <i class="fa-regular fa-calendar"></i>
+    <span id="currentDate"></span>
+</div>
+
+        <div class="notification">
+            <i class="fa-regular fa-bell"></i>
+        </div>
+
+        <a href="logout.html"
+           class="profile"
+           title="Logout"
+           aria-label="Logout"
+           style="text-decoration:none; color:inherit;">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="welcome">Welcome to</p>
+
+            <h2>Auto<span>Nexa</span></h2>
+
+            <div class="tagline">
+
+                <span></span>
+
+                <p>YOUR RIDES. &nbsp; OUR SMOOTH CARE.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats-container">
+
+
+        <!-- TOTAL CUSTOMERS -->
+
+        <div class="stat-card customer-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div class="stat-info">
+
+                <p>Total Customers</p>
+
+                <h3>{{ stats.customers }}</h3>
+
+                <span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Customer records
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TOTAL VEHICLES -->
+
+        <div class="stat-card vehicle-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-car"></i>
+            </div>
+
+            <div class="stat-info">
+
+                <p>Total Vehicles</p>
+
+                <h3>{{ stats.vehicles }}</h3>
+
+                <span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Vehicle records
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TOTAL SERVICES -->
+
+        <div class="stat-card service-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-wrench"></i>
+            </div>
+
+            <div class="stat-info">
+
+                <p>Total Services</p>
+
+                <h3>{{ stats.services }}</h3>
+
+                <span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    Service records
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICE HISTORY -->
+
+        <div class="stat-card history-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </div>
+
+            <div class="stat-info">
+
+                <p>Service History</p>
+
+                <h3>{{ stats.services }}</h3>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Service records
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= VEHICLE SERVICE OVERVIEW ================= -->
+
+    <section class="management-section">
+
+        <div class="section-heading">
+
+            <h2>Vehicle Service Overview</h2>
+
+            <p>
+                Monitor vehicle maintenance and service activity
+            </p>
+
+        </div>
+
+
+        <!-- OVERVIEW CARDS -->
+
+        <div class="overview-grid">
+
+
+            <!-- TODAY'S SERVICES -->
+
+            <div class="overview-card today-service-card">
+
+                <div class="overview-icon">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+
+                <div class="overview-info">
+
+                    <p>Today's Services</p>
+
+                    <h3>08</h3>
+
+                    <span>
+                        <i class="fa-solid fa-calendar-day"></i>
+                        Scheduled today
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMPLETED SERVICES -->
+
+            <div class="overview-card completed-card">
+
+                <div class="overview-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div class="overview-info">
+
+                    <p>Completed Services</p>
+
+                    <h3>218</h3>
+
+                    <span>
+                        <i class="fa-solid fa-check"></i>
+                        Successfully completed
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= LOWER INFORMATION ================= -->
+
+        <div class="dashboard-info-grid">
+
+
+            <!-- ================= SERVICE ACTIVITY ================= -->
+
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-chart-simple"></i>
+                            Service Activity
+                        </h3>
+
+                        <p>
+                            Current service activity overview
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <!-- GENERAL SERVICE -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon blue">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>General Service</strong>
+
+                            <span>
+                                Regular vehicle maintenance
+                            </span>
+
+                        </div>
+
+                        <b>08</b>
+
+                    </div>
+
+
+
+                    <!-- OIL CHANGE -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon green">
+                            <i class="fa-solid fa-oil-can"></i>
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>Oil Change</strong>
+
+                            <span>
+                                Engine oil replacement
+                            </span>
+
+                        </div>
+
+                        <b>05</b>
+
+                    </div>
+
+
+
+                    <!-- VEHICLE REPAIR -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon orange">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>Vehicle Repair</strong>
+
+                            <span>
+                                Repair and maintenance work
+                            </span>
+
+                        </div>
+
+                        <b>03</b>
+
+                    </div>
+
+
+
+                    <!-- FULL SERVICE -->
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon purple">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+
+                        <div class="activity-text">
+
+                            <strong>Full Service</strong>
+
+                            <span>
+                                Complete vehicle inspection
+                            </span>
+
+                        </div>
+
+                        <b>04</b>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= VEHICLE STATUS ================= -->
+
+            <div class="dashboard-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <h3>
+                            <i class="fa-solid fa-car"></i>
+                            Vehicle Status
+                        </h3>
+
+                        <p>
+                            Current vehicle maintenance status
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-status-list">
+
+
+                    <!-- GOOD CONDITION -->
+
+                    <div class="status-row">
+
+                        <div class="status-name">
+
+                            <span class="status-dot good"></span>
+
+                            <span>
+
+                                <strong>Good Condition</strong>
+
+                                <small>
+                                    Regular maintenance up to date
+                                </small>
+
+                            </span>
+
+                        </div>
+
+                        <strong>52</strong>
+
+                    </div>
+
+
+
+                    <!-- SERVICE DUE SOON -->
+
+                    <div class="status-row">
+
+                        <div class="status-name">
+
+                            <span class="status-dot warning"></span>
+
+                            <span>
+
+                                <strong>Service Due Soon</strong>
+
+                                <small>
+                                    Maintenance approaching
+                                </small>
+
+                            </span>
+
+                        </div>
+
+                        <strong>21</strong>
+
+                    </div>
+
+
+
+                    <!-- SERVICE REQUIRED -->
+
+                    <div class="status-row">
+
+                        <div class="status-name">
+
+                            <span class="status-dot danger"></span>
+
+                            <span>
+
+                                <strong>Service Required</strong>
+
+                                <small>
+                                    Immediate attention needed
+                                </small>
+
+                            </span>
+
+                        </div>
+
+                        <strong>12</strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="status-summary">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <p>
+                        Regular servicing helps maintain vehicle
+                        performance and safety.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= MAINTENANCE TIPS ================= -->
+
+        <div class="maintenance-section">
+
+            <div class="maintenance-heading">
+
+                <h3>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Vehicle Maintenance Tips
+                </h3>
+
+                <p>
+                    Simple practices for better vehicle performance
+                </p>
+
+            </div>
+
+
+            <div class="tips-grid">
+
+
+                <!-- ENGINE OIL -->
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-oil-can"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>Check Engine Oil</h4>
+
+                        <p>
+                            Check engine oil regularly and replace it
+                            according to the recommended service schedule.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TYRE PRESSURE -->
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-circle-dot"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>Check Tyre Pressure</h4>
+
+                        <p>
+                            Maintain correct tyre pressure for better
+                            safety, mileage and driving performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BRAKES -->
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-car-burst"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>Inspect Brakes</h4>
+
+                        <p>
+                            Regular brake inspection helps identify
+                            wear and keeps your vehicle safe.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- BATTERY -->
+
+                <div class="tip-card">
+
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-battery-half"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>Check Battery</h4>
+
+                        <p>
+                            Monitor battery condition and terminals
+                            to avoid unexpected starting problems.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                <i class="fa-solid fa-car-side"></i>
+                Auto<span>Nexa</span>
+            </h3>
+
+            <p>
+                Vehicle Automation Management System
+            </p>
+
+        </div>
+
+
+        <div class="footer-right">
+
+            <p>
+                © 2026 AutoNexa. All Rights Reserved.
+            </p>
+
+            <p>
+                Smart Management. Smooth Rides.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+const currentDate = document.getElementById("currentDate");
+
+if (currentDate) {
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    };
+
+    currentDate.textContent = today.toLocaleDateString(
+        "en-GB",
+        options
+    );
+}
+</script>
+
+</body>
+</html>
